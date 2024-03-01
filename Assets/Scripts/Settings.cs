@@ -30,23 +30,23 @@ public class Settings : MonoBehaviour
 
     public void SensivityX(float sliderValueX)
     {
-        CameraFollowing._sensivityY = sliderValueX; 
+        CameraFollowing._sensivity = sliderValueX; 
     }
 
-    public void SensivityY(float sliderValueY)
+    /*public void SensivityY(float sliderValueY)
     {
         CameraFollowing._sensivityX = sliderValueY;
-    }
+    }*/
 
     public TextMeshProUGUI sensivityXText;
     public void SensivityXText()
     {
-        sensivityXText.text = CameraFollowing._sensivityY.ToString("0.00");
+        sensivityXText.text = CameraFollowing._sensivity.ToString("0.00");
     }
 
     public TextMeshProUGUI sensivityYText;
     public void SensivityYText()
     {
-        sensivityYText.text = CameraFollowing._sensivityX.ToString("0.00");
+        sensivityYText.text = CameraFollowing._sensivity.ToString("0.00");
     }
 }

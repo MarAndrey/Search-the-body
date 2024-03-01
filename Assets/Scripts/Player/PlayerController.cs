@@ -60,11 +60,11 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            _moveSpeed = 25f;
+            _moveSpeed = 20;
         }
         else 
         {
-            _moveSpeed = 10f;
+            _moveSpeed = 10;
         }
     }
 

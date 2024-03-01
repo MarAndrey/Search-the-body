@@ -3,7 +3,8 @@ using UnityEngine;
 public class CameraFollowing : MonoBehaviour
 {
     [SerializeField] private Transform _player;
-    public static float _sensivityX = 1, _sensivityY = 1;
+    //public static float _sensivityX = 1, _sensivityY = 1;
+    public static float _sensivity;
     private float _xRot, _yRot;
     private Rigidbody _playerRb;
     [SerializeField] private AnimationCurve _curve, _curve2;
@@ -25,11 +26,11 @@ public class CameraFollowing : MonoBehaviour
         Keyframe keyFrameY = new Keyframe(Time.time, transform.rotation.y, 0, 0, 0, 0);
         _curve2.AddKey(keyFrameY);
         
-        _playerRb.angularVelocity = new Vector3(_playerRb.angularVelocity.x, _yRot * _sensivityY, 0);
+        _playerRb.angularVelocity = new Vector3(_playerRb.angularVelocity.x, _yRot * _sensivity, 0);
     }
 
     void LateUpdate()
     {          
-        transform.Rotate(new Vector3(1, 0, 0) * -_xRot * _sensivityX);       
+        transform.Rotate(new Vector3(1, 0, 0) * -_xRot * _sensivity / 1.77f);       
     }
 }
